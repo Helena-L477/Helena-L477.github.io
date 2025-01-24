@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="java.js"> </script>
+    <style>
+        .navbar {
+          top: 0;
+          position: sticky;
+          display: flex;
+          background-color: #6466F1;
+        }
+      
+        .navbar a {
+          display: flex;
+          align-items: center;
+          vertical-align:center;
+          cursor: pointer;
+          padding: 10px 15px;
+          background-color: #6466F1;
+          color: white;
+        }
+      
+        .navbar img {
+          border-radius: 10px;
+          padding: 5px;
+        }
+      
+        .navbar a:hover {
+          background-color: #7C85F6;
+        }
+      
+        body {
+          margin: 0;
+          background-color: #000;
+          color: white;
+          font-family: ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+        }
+      
+        .dialog-background {
+          position: fixed;
+          display: none;
+          inset: 0;
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .dialog-background.show {
+          display: block;
+        }
+      
+        .dialog {
+          position: fixed;
+          inset: 20% 20%;
+          background-color: #1F2937;
+          border-radius: 10px;
+          padding: 5px 20px;
+          display: none;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-bottom: 20px;
+        }
+
+        .dialog.show {
+            display: flex;
+        }
+      
+        .title {
+          text-align: center;
+          font-weight: bold;
+          font-size: 24px;
+        }
+      
+        .confirm {
+          padding: 8px 15px;
+          background-color: #323F51;
+          border: none;
+          color: lightgray;
+          border-radius: 7px;
+          cursor: pointer;
+        }
+      
+        .confirm:hover {
+          background-color: #4a586b;
+        }
+      </style>
+</head>
+  
+<body>
+    
+    <div class="navbar">
+      <img width="40px" height="40px" src="https://wc.scist.org/favicon.ico">
+      <a>首頁</a>
+      <a>關於我們</a>
+      <a>加入</a>
+    </div>
+    <div class="content">
+        <button onclick="toggleDialog()">
+            Open Dialog
+        </button>
+      <pre>
+    活動名稱：2025 SCIST WINTER CAMP
+    活動日期：2025/1/24 - 2025/1/26
+    活動地點：國立成功大學、國立臺南一中、國立臺南二中
+    主辦單位：SCIST 南臺灣學生資訊社群
+    活動對象：全臺國高中生
+    報名費用：2000元/基本費用；3000元/需住宿者
+    住宿地點：老曼船長
+  
+    報到
+    09:00-09:30
+    開幕
+    09:30-09:45
+    闖關
+    09:45-12:30
+    午餐
+    12:30-13:30
+    多元課程 I (網頁前端 冰川)
+    13:30-17:30
+    晚餐 (自理)
+    17:30-19:00
+    晚會
+    19:00-21:00
+    場復 & 帶住宿
+  
+  
+    召群
+    Fearnot/盧明澤
+    副召
+    帕尼/陳詩函
+    總召
+    鯊魚Y.Y/許安祐
+    副召
+    課程講師
+    冰川/陳威達
+    主題：網頁前端設計
+    OsGa/黃宥睿
+    主題：Discord bot
+    4Yu/黃士育
+    主題：AI基礎+實作
+      </pre>
+    </div>
+    <div class="dialog-background" id="dialog-background">
+      <div class="dialog" id="dialog">
+        <div>
+          <p class="title">通知</p>
+          <p>報名成功！</p>
+          <p>報名序號：AC00001</p>
+        </div>
+        <button class="confirm" onclick="toggleDialog()">確定</button>
+      </div>
+    </div>
+  </body>
+  
+</html>
+
+
